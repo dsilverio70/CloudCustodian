@@ -1,0 +1,6 @@
+policies:
+  - name: my-first-policy-ec2
+    resource: ec2
+    filters:
+      - "State.Name": running
+      - "tag:Custodian":present
