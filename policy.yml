@@ -4,8 +4,8 @@ policies:
     filters:
       - type: offhour
         tag: CustodianOffHours
-        default_tz: pt
-        offhour: 19
+        default_tz: et
+        offhour: 20
       - type: instance-age
         hours: 1
     actions:
@@ -16,7 +16,7 @@ policies:
     filters:
       - type: onhour
         tag: CustodianOffHours
-        default_tz: pt
+        default_tz: et
         onhour: 7
       - type: value
         value: 1
