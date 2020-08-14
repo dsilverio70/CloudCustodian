@@ -3,4 +3,4 @@ policies:
     resource: ec2
     filters:
       - "State.Name": running
-      - "tag:Custodian":present
+      - "tag:Custodian": present
