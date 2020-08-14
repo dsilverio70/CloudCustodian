@@ -7,7 +7,7 @@ policies:
     resource: ec2
     filters:
       - type: offhour
-        default_tz: est # set this to your timezone
+        default_tz: et # set this to your timezone
         tag: downtime
         opt-out: false
         offhour: 18 # the hour when instances will be shut down
