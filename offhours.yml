@@ -5,32 +5,10 @@ policies:
 #==================
 
 # turn instances off during non-business hours
-  - name: ec2-stop-instances-offhours
+  policies:
+  - name: turn-off
     resource: ec2
-    mode:
-      type: periodic
-      role: arn:aws:iam::867336174616:role/cost-control
-      schedule: "rate(10 minutes)"
     filters:
-      #- "tag:Custodian": present
-      - type: offhour
-        #tag: offhours
-     #   default_tz: et
-        offhour: 15
+      - "tag:Custodian": present
     actions:
       - stop
-
-  - name: ec2-start-instances-onhours
-    resource: ec2
-    mode:
-      type: periodic
-      role: arn:aws:iam::867336174616:role/cost-control
-      schedule: "rate(10 minutes)"
-    filters:
-      #- "tag:Custodian": present
-      - type: onhour
-     #   tag: offhours
-        default_tz: et
-        onhour: 8
-    actions:
-      - start
