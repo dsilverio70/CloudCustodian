@@ -10,7 +10,7 @@ policies:
     mode:
       type: periodic
       role: arn:aws:iam::867336174616:role/cost-control
-      schedule: "rate(15 minutes)"
+      schedule: "rate(60 minutes)"
     filters:
       - "tag:Custodian": present
       - type: offhour
@@ -25,7 +25,7 @@ policies:
     mode:
       type: periodic
       role: arn:aws:iam::867336174616:role/cost-control
-      schedule: "rate(15 minutes)"
+      schedule: "rate(60 minutes)"
     filters:
       - "tag:Custodian": present
       - type: onhour
