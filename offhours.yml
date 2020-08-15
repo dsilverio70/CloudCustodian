@@ -9,7 +9,7 @@ policies:
     resource: ec2
     mode:
       type: periodic
-      role: arn:aws:iam::867336174616:policy/cost-control-permissions
+      role: arn:aws:iam::867336174616:role/cost-control-permissions
       schedule: "rate(15 minutes)"
     filters:
       - "tag:Custodian": present
@@ -24,7 +24,7 @@ policies:
     resource: ec2
     mode:
       type: periodic
-      role: arn:aws:iam::867336174616:policy/cost-control-permissions
+      role: arn:aws:iam::867336174616:role/cost-control-permissions
       schedule: "rate(15 minutes)"
     filters:
       - "tag:Custodian": present
