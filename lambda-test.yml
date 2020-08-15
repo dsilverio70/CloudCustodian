@@ -1,0 +1,11 @@
+policies:
+  - name: ec2-tag-running
+    resource: ec2
+    mode:
+      type: cloudtrail
+      events:
+       - RunInstances
+    actions:
+      - type: mark
+        tag: foo
+        msg: bar
