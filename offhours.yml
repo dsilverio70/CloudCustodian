@@ -12,9 +12,9 @@ policies:
       role: arn:aws:iam::867336174616:role/cost-control
       schedule: "rate(10 minutes)"
     filters:
-      - "tag:Custodian": present
+      #- "tag:Custodian": present
       - type: offhour
-        tag: offhours
+        #tag: offhours
         default_tz: et
         offhour: 15
     actions:
@@ -27,7 +27,7 @@ policies:
       role: arn:aws:iam::867336174616:role/cost-control
       schedule: "rate(10 minutes)"
     filters:
-      - "tag:Custodian": present
+      #- "tag:Custodian": present
       - type: onhour
         tag: offhours
         default_tz: et
