@@ -1,15 +1,36 @@
 policies:
-  - name: offhours-policy
-    mode:
-        type: scheduled
-        schedule: "cron(1 * * * ? *)" # Run every hour at one minute past the hour
-        role: arn:aws:iam::867336174616:policy/CC_Lamba_CW
+
+#==================
+# EC2
+#==================
+
+# turn instances off during non-business hours
+  - name: ec2-stop-instances-offhours
     resource: ec2
+    mode:
+      type: periodic
+      role: arn:aws:iam::867336174616:role/Admin
+      schedule: "rate(15 minutes)"
     filters:
+      - "tag:Custodian": present
       - type: offhour
-        default_tz: et # set this to your timezone
-        tag: downtime
-        opt-out: false
-        offhour: 18 # the hour when instances will be shut down
+        tag: offhours
+        default_tz: et
+        offhour: 20
     actions:
       - stop
+
+  - name: ec2-start-instances-onhours
+    resource: ec2
+    mode:
+      type: periodic
+      role: arn:aws:iam::867336174616:role/Admin
+      schedule: "rate(15 minutes)"
+    filters:
+      - "tag:Custodian": present
+      - type: onhour
+        tag: offhours
+        default_tz: et
+        onhour: 8
+    actions:
+      - start
