@@ -10,13 +10,13 @@ policies:
     mode:
       type: periodic
       role: arn:aws:iam::867336174616:role/cost-control
-      schedule: "rate(60 minutes)"
+      schedule: "rate(10 minutes)"
     filters:
       - "tag:Custodian": present
       - type: offhour
         tag: offhours
         default_tz: et
-        offhour: 20
+        offhour: 15
     actions:
       - stop
 
@@ -25,7 +25,7 @@ policies:
     mode:
       type: periodic
       role: arn:aws:iam::867336174616:role/cost-control
-      schedule: "rate(60 minutes)"
+      schedule: "rate(10 minutes)"
     filters:
       - "tag:Custodian": present
       - type: onhour
