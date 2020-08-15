@@ -15,7 +15,7 @@ policies:
       #- "tag:Custodian": present
       - type: offhour
         #tag: offhours
-        default_tz: et
+     #   default_tz: et
         offhour: 15
     actions:
       - stop
@@ -29,7 +29,7 @@ policies:
     filters:
       #- "tag:Custodian": present
       - type: onhour
-        tag: offhours
+     #   tag: offhours
         default_tz: et
         onhour: 8
     actions:
