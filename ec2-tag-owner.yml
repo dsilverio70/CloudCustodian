@@ -8,8 +8,6 @@ policies:
     mode:
       type: cloudtrail
       role: arn:aws:iam::867336174616:role/cost-control
-      schedule: "rate(5 minutes)"
-      timeout: 180
       events:
         - RunInstances
     filters:
