@@ -1,3 +1,4 @@
+Policies:
 - name: ec2-offhours-stop
   resource: ec2
   description: |
