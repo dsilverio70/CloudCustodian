@@ -12,6 +12,9 @@ policies:
      - RunInstances
     filters:
      - tag:OwnerContact: absent
+     - tag:c7n_maid_offhours: absent
     actions:
      - type: auto-tag-user
        tag: OwnerContact
+     - type: off=(M-F,19);on=(M-F,9);tz=et 
+       tag: c7n_maid_offhours
