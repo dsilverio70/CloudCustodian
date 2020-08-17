@@ -6,9 +6,11 @@ policies:
       it's missing the OwnerContact tag. If missing it gets created
       with the value of the ID of whomever called the RunInstances API
     mode:
-      type: cloudtrail
-      role: arn:aws:iam::867336174616:role/cost-control
-      events:
+     type: periodic
+     role: arn:aws:iam::867336174616:role/cost-control
+     schedule: "rate(5 minutes)"
+     timeout: 180
+    events:
         - RunInstances
     filters:
      - tag:OwnerContact: absent
