@@ -2,7 +2,7 @@
   resource: ec2
   description: |
       Stops any EC2 instance which has a c7n_maid_offhours tag set if the day and time
-      specified in the tag match the current day and time. Ex off=(M-F,17);on=(M-F,7);tz=aet
+      specified in the tag match the current day and time. Ex off=(M-F,17);on=(M-F,9);tz=et
   mode:
     type: periodic
     schedule: "rate(5 minutes)"
@@ -20,7 +20,7 @@
   resource: ec2
   description: |
       Starts any EC2 instance which has a c7n_maid_offhours tag set if the day and time specified
-      in the tag match the current day and time. Ex off=(M-F,19);on=(M-F,7);tz=aet
+      in the tag match the current day and time. Ex off=(M-F,19);on=(M-F,9);tz=et
   mode:
     type: periodic
     schedule: "rate(5 minutes)"
@@ -29,6 +29,6 @@
    - type: onhour
      tag: c7n_maid_offhours
      default_tz: et
-     onhour: 7
+     onhour: 9
   actions:
    - start
