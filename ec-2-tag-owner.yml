@@ -1,0 +1,17 @@
+policies:
+  - name: ec2-auto-tag-ownercontact
+    resource: ec2
+    description: |
+      Triggered when a new EC2 Instance is launched. Checks to see if
+      it's missing the OwnerContact tag. If missing it gets created
+      with the value of the ID of whomever called the RunInstances API
+    mode:
+      type: cloudtrail
+      role: arn:aws:iam::867336174616:role/cost-control-owner
+      events:
+        - RunInstances
+    filters:
+     - tag:OwnerContact: absent
+    actions:
+     - type: auto-tag-user
+       tag: OwnerContact
