@@ -8,7 +8,8 @@ policies:
     mode:
      type: cloudtrail
      role: arn:aws:iam::867336174616:role/cost-control
-     events: RunInstances
+     events: 
+     - RunInstances
     filters:
      - tag:OwnerContact: absent
     actions:
