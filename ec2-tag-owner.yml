@@ -16,5 +16,6 @@ policies:
     actions:
      - type: auto-tag-user
        tag: OwnerContact
-     - type: off=(M-F,19);on=(M-F,9);tz=et 
+     - type: tag 
        tag: c7n_maid_offhours
+       value: off=(M-F,19);on=(M-F,9);tz=et
