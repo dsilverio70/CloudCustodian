@@ -13,7 +13,7 @@ policies:
       events:
         - RunInstances
     filters:
-     - tag:Owner: absent
+     - tag:OwnerContact: absent
     actions:
-     - type: auto-tag
-       tag: Owner
+     - type: auto-tag-user
+       tag: OwnerContact
