@@ -6,6 +6,7 @@ policies:
       specified in the tag match the current day and time. Ex off=(M-F,17);on=(M-F,9);tz=et
   mode:
     type: periodic
+    arn:aws:iam::867336174616:role/cost-control
     schedule: "rate(5 minutes)"
     timeout: 180
   filters:
@@ -24,6 +25,7 @@ policies:
       in the tag match the current day and time. Ex off=(M-F,19);on=(M-F,9);tz=et
   mode:
     type: periodic
+    arn:aws:iam::867336174616:role/cost-control
     schedule: "rate(5 minutes)"
     timeout: 180
   filters:
