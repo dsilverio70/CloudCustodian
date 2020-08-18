@@ -7,7 +7,7 @@ policies:
   mode:
     type: periodic
     role: arn:aws:iam::867336174616:role/cost-control
-    schedule: "rate(5 minutes)"
+    schedule: "rate(1 minutes)"
     timeout: 180
   filters:
    - type: offhour
@@ -26,7 +26,7 @@ policies:
   mode:
     type: periodic
     role: arn:aws:iam::867336174616:role/cost-control
-    schedule: "rate(5 minutes)"
+    schedule: "rate(1 minutes)"
     timeout: 180
   filters:
    - type: onhour
